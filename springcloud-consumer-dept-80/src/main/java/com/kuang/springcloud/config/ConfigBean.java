@@ -1,5 +1,6 @@
 package com.kuang.springcloud.config;
 
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
@@ -12,7 +13,12 @@ import org.springframework.web.client.RestTemplate;
 public class ConfigBean {
     // @Configuration -- spring applicationContext.xml
 
+    /**
+     * Ribbon配置负载均衡实现RestTemplate
+     * @return
+     */
     @Bean
+    @LoadBalanced
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }
