@@ -1,0 +1,8 @@
+#系统级别配置spring
+spring:
+  cloud:
+    config:
+      name: config-client #需要从git上读取的资源名称，无需后缀
+      profile: dev
+      label: master
+      uri: http://localhost:3344
