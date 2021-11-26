@@ -14,7 +14,7 @@ import java.util.List;
  * @Author meditat0r
  * @create 2021/11/26 14:22
  */
-@FeignClient(value = "springcloud-provider-dept")
+@FeignClient(value = "springcloud-provider-dept", fallbackFactory = DeptClientServiceFallbackFactory.class)
 @Component
 public interface DeptClientService {
 
